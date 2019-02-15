@@ -22,10 +22,13 @@ int partition (int arr[], int low, int high)
 	for (int j = low; j < high -1 ; j++){
 	
 		if(arr[j] <= pivot){
-			++i;
+			i++;
+			printf("swapping %d and %d \n", arr[i], arr[j]);
 			swap (&arr[i],&arr[j]);
 		}
 	}
+	swap(&arr[i+1],&arr[high]);
+	return(i+1);
 }
 
 void quicksort (int arr[], int low, int high)
@@ -33,7 +36,7 @@ void quicksort (int arr[], int low, int high)
 	if (low < high){
 	
 		int pi = partition (arr, low, high);
-
+		
 		quicksort(arr, low, pi-1);
 		quicksort(arr,pi + 1, high);
 	}	 
@@ -60,7 +63,8 @@ int main (int argc, char * argv[])
 
 */
 	int arr[] = {10, 7, 8, 9, 1, 5};
-	int n = sizeof(arr)/sizeof(arr[0]);
+	int n = sizeof(arr)/sizeof(arr[0]);//how many things
+	printf("n is %d\n",n);
 	
 	quicksort(arr, 0, n-1);
 	
