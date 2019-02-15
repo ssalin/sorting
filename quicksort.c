@@ -7,15 +7,29 @@
 #include<stdlib.h>
 
 void swap (int * a, int * b)
-{
+{ // function to swap index locations
 	int t = *a;
 	*a = *b;
 	*b = t;
 }
 
 
-void quicksort (int *  vals)
+int patition (int arr[] int low, int high)
 {
+	int pivot = arr[high];
+	int i = [low-1];
+
+	for (int j = low; j < high -1 ; j++){
+	
+		if(arr[j] <= pivot){
+			i++
+			swap (&ar[i],&arr[j]);
+		}
+	}
+}
+
+void quicksort (int *  vals)
+{ //recursively do a quicksort. neat.
 	 
 	
 }
