@@ -1,5 +1,8 @@
-//program to quicksort whatever is passed in via argv
+// program to quicksort whatever is passed in via argv
 // for now we assume everything coming in is a char seperated by spaces.
+// single thread quicksort code copied from geeksforgeeks
+// planning to add option for multithreading
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -17,7 +20,7 @@ void quicksort (int *  vals)
 	
 }
 
- int main (int argc, char * argv[])
+int main (int argc, char * argv[])
 {
 
 	 	//loop to grab vals on stdin and put them in an array
