@@ -49,27 +49,31 @@ int main (int argc, char * argv[])
 	//loop to grab vals on stdin and put them in an array
  	// would the vals b chars or ints? probably chars.
 	// dynamic 
-/*	if(argc -1 > 0) //make sure inputs are actually give{
-		int * in = NULL;
-		// in = malloc (argc - 1 * sizeof(int)); //make array to hold all the input vals
+	int * in = NULL;
+	printf("argc is %d\n",argc);
 
-		for (int i = 1; i < argc-1; ++i){
-			in[i] = atoi(argv[i]);
+	if(argc -1 > 0){ //make sure inputs are actually given
+		
+		in = malloc ((argc - 1) * sizeof(int)); //make array to hold all the input vals
+
+		for (int i = 0; i < argc-1; ++i){
+			in[i] = atoi(argv[i+1]);
+			printf("%d \n", in[i]);
 		}
 	
 	}
-	else
-		printf("no inputs given :(");
-
-*/
-	int arr[] = {10, 7, 8, 9, 1, 5};
-	int n = sizeof(arr)/sizeof(arr[0]);//how many things
+	else{
+		printf("no inputs given :'(");
+		return 1;
+	}
+	
+	int n = sizeof(in)/sizeof(in[0]);//how many things
 	printf("n is %d\n",n);
 	
-	quicksort(arr, 0, n-1);
+//	quicksort(arr, 0, n-1);
 	
 	for (int i = 0; i < n; i++){
-	printf("%d ",arr[i]);
+		printf("%d \n",in[i]);
 	}
 }
 
