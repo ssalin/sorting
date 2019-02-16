@@ -49,13 +49,13 @@ int main (int argc, char * argv[])
 	//loop to grab vals on stdin and put them in an array
  	// would the vals b chars or ints? probably chars.
 	// dynamic 
-	int * in = NULL;
+	int * in = NULL;//id rather do the alloc inside the if statement but compiler didn't like it
 	printf("argc is %d\n",argc);
+	int n = (argc-1);//how many things
 
 	if(argc -1 > 0){ //make sure inputs are actually given
+		in = calloc ((argc - 1), sizeof(int)); //make array to hold all the input vals
 		
-		in = malloc ((argc - 1) * sizeof(int)); //make array to hold all the input vals
-
 		for (int i = 0; i < argc-1; ++i){
 			in[i] = atoi(argv[i+1]);
 			printf("%d \n", in[i]);
@@ -67,7 +67,6 @@ int main (int argc, char * argv[])
 		return 1;
 	}
 	
-	int n = sizeof(in)/sizeof(in[0]);//how many things
 	printf("n is %d\n",n);
 	
 //	quicksort(arr, 0, n-1);
