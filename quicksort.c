@@ -67,9 +67,9 @@ int main (int argc, char * argv[])
 		return 1;
 	}
 	
-	printf("n is %d\n",n);
+	//printf("n is %d\n",n);
 	
-//	quicksort(arr, 0, n-1);
+	quicksort(in, 0, n-1);
 	
 	for (int i = 0; i < n; i++){
 		printf("%d \n",in[i]);
